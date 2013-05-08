@@ -13,7 +13,7 @@ module Cardpay
       hmac_data = "POST" + "\n" + "applicatoin/json" + "\n" + content_digest + "\n" + gge4_time + "\n" + "/transaction/v12"
       
       uri = @test ? TEST_URL : LIVE_URL
-      uri = URI.parse(url)
+      uri = URI.parse(uri)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
       http.ssl_timeout = 2
