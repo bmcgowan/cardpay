@@ -1,5 +1,6 @@
 require 'net/http'
 require 'net/https'
+require 'uri'
 require 'rubygems'
 require 'active_support/core_ext'
 require 'json'
