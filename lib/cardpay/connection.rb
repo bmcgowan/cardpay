@@ -8,9 +8,13 @@ module Cardpay
       txn_data[:gateway_id] = @gateway_id
       txn_data[:password] = @password
       txn_data = JSON.generate(txn_data)
+      puts "body json: #{txn_data}"
       content_digest = Digest::SHA1.hexdigest(txn_data)
+      puts "content digest: #{content_digest}"
       gge4_time = Time.now.utc.iso8601
+      puts "gge4 time: #{gge4_time}"
       hmac_data = "POST" + "\n" + "applicatoin/json" + "\n" + content_digest + "\n" + gge4_time + "\n" + "/transaction/v12"
+      puts "hmac_data: #{hmac_data}"
       
       uri = @test ? TEST_URL : LIVE_URL
       uri = URI.parse(uri)
@@ -22,7 +26,8 @@ module Cardpay
       request.set_content_type 'application/json'
       request.add_field 'X-GGe4-Content-SHA1', content_digest
       request.add_field 'X-GGe4-Date', gge4_time
-      request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha1', @hmac_key, hmac_data))
+      request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha1', @hmac_key, hmac_data)).strip
+      puts "auth header: #{'GGE4_API ' + @key_id + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha1', @hmac_key, hmac_data)).strip}"
       response = http.request(request, txn_data)
       response = JSON.parse(response.body)
     end
