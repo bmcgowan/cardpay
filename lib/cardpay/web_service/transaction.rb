@@ -4,7 +4,7 @@ module Cardpay
         
       def purchase(data)
         data[:transaction_type] = "00"
-        response = post(data)
+        res = response(post(data))
       end
       
       def authorize
