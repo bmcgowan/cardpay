@@ -25,6 +25,7 @@ module Cardpay
       request.add_field 'X-GGe4-Date', gge4_time
       request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha1', @hmac_key, hmac_data)).strip
       response = http.request(request, txn_data)
+      puts response.body
       response = JSON.parse(response.body)
     end
     
