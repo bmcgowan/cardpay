@@ -7,7 +7,7 @@ module Cardpay
         begin
           response = post(data)
         rescue
-          response = Response.new(:error => "Error connecting to Web Service")
+          response = Response.new(:gateway_id => @gateway_id, :error => "Error connecting to Web Service")
         end
         response = Response.new(response)
       end
