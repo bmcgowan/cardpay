@@ -5,7 +5,6 @@ module Cardpay
     require_relative 'web_service/transaction'
     require_relative 'web_service/response'
     
-    include Configuration
     include Connection
     
     attr_accessor :gateway_id, :password, :key_id, :hmac_key, :test
