@@ -3,7 +3,6 @@ module Cardpay
     class Response
       
       def initialize(options)
-        @attributes = {}
         parse(options)
       end
       

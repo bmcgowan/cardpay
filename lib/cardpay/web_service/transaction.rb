@@ -4,7 +4,11 @@ module Cardpay
         
       def purchase(data)
         data[:transaction_type] = "00"
-        response = post(data)
+        begin
+          response = post(data)
+        rescue
+          response = Response.new(:error => "Error connecting to Web Service")
+        end
         response = Response.new(response)
       end
       

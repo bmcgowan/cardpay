@@ -2,7 +2,7 @@ module Cardpay
   module Connection
     
     LIVE_URL = "https://api.globalgatewaye4.firstdata.com/transaction/v12"
-    TEST_URL = "https://api.demo.globalgatewaye4.firstdata.com/transaction/v12"
+    TEST_URL = "https://api.demo.globalgatewaye4.firstdata.com/transaction/v15"
     
     def post(txn_data)
       txn_data[:gateway_id] = @gateway_id

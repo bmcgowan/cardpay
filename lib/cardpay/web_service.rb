@@ -1,4 +1,3 @@
-require_relative 'configuration'
 require_relative 'connection'
 
 module Cardpay

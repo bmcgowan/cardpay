@@ -16,7 +16,6 @@ module Cardpay
   
   class CardpayError < StandardError; end
   
-  extend Configuration
   class << self
     
     def new(options={})
