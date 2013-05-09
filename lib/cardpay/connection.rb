@@ -13,7 +13,7 @@ module Cardpay
       puts "content digest: #{content_digest}"
       gge4_time = Time.now.utc.iso8601
       puts "gge4 time: #{gge4_time}"
-      hmac_data = "POST" + "\n" + "applicatoin/json" + "\n" + content_digest + "\n" + gge4_time + "\n" + "/transaction/v12"
+      hmac_data = "POST" + "\n" + "application/json" + "\n" + content_digest + "\n" + gge4_time + "\n" + "/transaction/v12"
       puts "hmac_data: #{hmac_data}"
       
       uri = @test ? TEST_URL : LIVE_URL
@@ -24,6 +24,7 @@ module Cardpay
       http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       request = Net::HTTP::Post.new(uri.request_uri)
       request.set_content_type 'application/json'
+      request.add_field 'Accept', 'application/json'
       request.add_field 'X-GGe4-Content-SHA1', content_digest
       request.add_field 'X-GGe4-Date', gge4_time
       request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + Base64.encode64(OpenSSL::HMAC.digest('sha1', @hmac_key, hmac_data)).strip
