@@ -26,7 +26,7 @@ module Cardpay
       raise ArgumentError, 'Missing Password' if @password.nil?
       raise ArgumentError, 'Missing Key ID' if @key_id.nil?
       raise ArgumentError, 'Missing HMAC Key' if @hmac_key.nil?
-      raise ArgumentError, 'Test must be a boolean' if @test != true || @test != false
+      raise ArgumentError, 'Test must be a boolean' if @test != true && @test != false
     end
     
     include Cardpay::WebService::Transaction
