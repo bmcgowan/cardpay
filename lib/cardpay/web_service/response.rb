@@ -1,10 +1,17 @@
 module Cardpay
   class WebService
-    module Response
+    class Response
       
-      def response(res={})
-        res.each do |key, value|
-          instance_variable_set "@#{key}", value
+      attr_accessor :attributes
+      
+      def initialize(options)
+        @attributes = {}
+        parse(options)
+      end
+      
+      def parse(response)
+        response.each do |key, value|
+          attributes[key] = value
         end
       end
       
