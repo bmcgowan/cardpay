@@ -22,6 +22,5 @@ module Cardpay
     end
     
     include Cardpay::WebService::Transaction
-    include Cardpay::WebService::Response
   end
 end
