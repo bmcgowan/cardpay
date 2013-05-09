@@ -4,40 +4,50 @@ module Cardpay
         
       def purchase(data)
         data[:transaction_type] = "00"
-        begin
-          response = post(data)
-        rescue
-          response = Response.new({:gateway_id => @gateway_id, :error => "Error connecting to Web Service"})
-        end
+        response = post(data)
         response = Response.new(response)
       end
       
-      def authorize
-        
+      def authorize(data)
+        data[:transaction_type] = "01"
+        response = post(data)
+        response = Response.new(response)
       end
       
-      def capture
-        
+      def capture(data)
+        data[:transaction_type] = "02"
+        response = post(data)
+        response = Response.new(response)
       end
       
-      def refund
-        
+      def refund(data)
+        data[:transaction_type] = "04"
+        response = post(data)
+        response = Response.new(response)
       end
       
-      def void
-        
+      def void(data)
+        data[:transaction_type] = "13"
+        response = post(data)
+        response = Response.new(response)
       end
       
-      def tagged_capture
-        
+      def tagged_capture(data)
+        data[:transaction_type] = "32"
+        response = post(data)
+        response = Response.new(response)
       end
       
-      def tagged_void
-        
+      def tagged_void(data)
+        data[:transaction_type] = "33"
+        response = post(data)
+        response = Response.new(response)
       end
       
-      def tagged_refund
-        
+      def tagged_refund(data)
+        data[:transaction_type] = "34"
+        response = post(data)
+        response = Response.new(response)
       end
       
     end
