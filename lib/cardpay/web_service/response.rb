@@ -2,8 +2,6 @@ module Cardpay
   class WebService
     class Response
       
-      attr_accessor :attributes
-      
       def initialize(options)
         @attributes = {}
         parse(options)
@@ -11,7 +9,8 @@ module Cardpay
       
       def parse(response)
         response.each do |key, value|
-          attributes[key] = value
+          self.class.send(:attr_accessor, key)
+          instance_variable_set "@#{key}", value
         end
       end
       
