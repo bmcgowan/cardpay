@@ -1,4 +1,4 @@
-module Cardpay
+module GlobalGateway
   module Connection
     
     LIVE_URL = "https://api.globalgatewaye4.firstdata.com/transaction/v12"

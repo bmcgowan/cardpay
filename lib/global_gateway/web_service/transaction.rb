@@ -1,4 +1,4 @@
-module Cardpay
+module GlobalGateway
   class WebService
     module Transaction
         

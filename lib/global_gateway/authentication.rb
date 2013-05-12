@@ -1,4 +1,4 @@
-module Cardpay
+module GlobalGateway
   module Authentication
     
     attr_accessor :content_digest, :gge4_time, :auth_hash

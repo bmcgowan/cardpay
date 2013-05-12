@@ -1,7 +1,7 @@
 require_relative 'connection'
 require_relative 'authentication'
 
-module Cardpay
+module GlobalGateway
   class WebService
     require_relative 'web_service/transaction'
     require_relative 'web_service/response'
@@ -31,6 +31,6 @@ module Cardpay
       raise ArgumentError, 'Test must be a boolean' if @test != true && @test != false
     end
     
-    include Cardpay::WebService::Transaction
+    include GlobalGateway::WebService::Transaction
   end
 end

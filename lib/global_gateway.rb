@@ -9,17 +9,17 @@ require 'date'
 require 'time'
 require 'cgi'
 
-require_relative "cardpay/version"
-require_relative "cardpay/web_service"
+require_relative "global_gateway/version"
+require_relative "global_gateway/web_service"
 
-module Cardpay
+module GlobalGateway
   
-  class CardpayError < StandardError; end
+  class GlobalGatewayError < StandardError; end
   
   class << self
     
     def new(options={})
-      Cardpay::WebService.new(options)
+      GlobalGateway::WebService.new(options)
     end
     
     def method_missing(method, *args, &block)
