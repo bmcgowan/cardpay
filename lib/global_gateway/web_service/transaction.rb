@@ -18,7 +18,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
@@ -28,7 +28,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
@@ -38,7 +38,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
@@ -48,7 +48,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
@@ -58,7 +58,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
@@ -68,7 +68,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
@@ -78,7 +78,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          response
+          error_response = Response.new({:transaction_approved => 0, :message => response})
         end
       end
       
