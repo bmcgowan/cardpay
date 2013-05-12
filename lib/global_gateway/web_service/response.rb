@@ -11,13 +11,13 @@ module GlobalGateway
           self.class.send(:attr_accessor, key)
           instance_variable_set "@#{key}", value
         end
-        
-        self.class.send(:attr_accessor, :success)
-        
+      end
+      
+      def success?
         if @transaction_approved == 1
-          @success = true
+          true
         else
-          @success = false
+          false
         end
       end
       
