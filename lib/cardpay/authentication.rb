@@ -9,6 +9,6 @@ module Cardpay
       hmac_data = "POST" + "\n" + "application/json" + "\n" + @content_digest + "\n" + @gge4_time + "\n" + "/transaction/v12"
       @auth_hash = Base64.encode64(OpenSSL::HMAC.digest('sha1', @hmac_key, hmac_data)).strip
     end
+    
   end
 end
-    
