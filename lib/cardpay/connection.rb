@@ -20,7 +20,7 @@ module Cardpay
       request.set_content_type 'application/json'
       request.add_field 'Accept', 'application/json'
       request.add_field 'X-GGe4-Content-SHA1', @content_digest
-      request.add_field 'X-GGe4-Date', gge4_time
+      request.add_field 'X-GGe4-Date', @gge4_time
       request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + @auth_hash
       response = http.request(request, txn_data)
       begin
