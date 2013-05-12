@@ -1,4 +1,5 @@
 require_relative 'connection'
+require_relative 'authentication'
 
 module Cardpay
   class WebService
@@ -6,6 +7,7 @@ module Cardpay
     require_relative 'web_service/response'
     
     include Connection
+    include Authentication
     
     attr_accessor :gateway_id, :password, :key_id, :hmac_key, :test
     
