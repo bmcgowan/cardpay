@@ -42,6 +42,16 @@ module GlobalGateway
         end
       end
       
+      def verify(data)
+        data[:transaction_type] = "05"
+        response = post(data)
+        begin
+          response = Response.new(response)
+        rescue
+          error_response = Response.new({:transaction_approved => 0, :message => response})
+        end
+      end
+      
       def void(data)
         data[:transaction_type] = "13"
         response = post(data)
