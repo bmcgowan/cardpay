@@ -25,10 +25,10 @@ module GlobalGateway
       request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + @auth_hash
       response = http.request(request, txn_data)
       begin
-        puts "Received from GGe4: #{JSON.parse(response.body)}"
+        Rails.logger.debug "Received from GGe4: #{JSON.parse(response.body)}"
         response = JSON.parse(response.body)
       rescue JSON::ParserError
-        puts "Received from GGe4: #{response.body}"
+        Rails.logger.debug "Received from GGe4: #{response.body}"
         response.body
       end
     end
