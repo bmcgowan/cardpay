@@ -8,6 +8,7 @@ module GlobalGateway
       txn_data[:gateway_id] = @gateway_id
       txn_data[:password] = @password
       txn_data = JSON.generate(txn_data)
+      puts "Sending to GGe4: #{txn_data}"
       authenticate(txn_data)
       
       uri = @test ? TEST_URL : LIVE_URL
@@ -24,8 +25,10 @@ module GlobalGateway
       request.add_field 'Authorization', 'GGE4_API ' + @key_id + ':' + @auth_hash
       response = http.request(request, txn_data)
       begin
+        puts "Received from GGe4: #{JSON.parse(response.body)}"
         response = JSON.parse(response.body)
       rescue JSON::ParserError
+        puts "Received from GGe4: #{response.body}"
         response.body
       end
     end
