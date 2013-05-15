@@ -8,7 +8,7 @@ module GlobalGateway
       txn_data[:gateway_id] = @gateway_id
       txn_data[:password] = @password
       txn_data = JSON.generate(txn_data)
-      puts "Sending to GGe4: #{txn_data}"
+      Rails.logger.debug "Sending to GGe4: #{txn_data}"
       authenticate(txn_data)
       
       uri = @test ? TEST_URL : LIVE_URL
