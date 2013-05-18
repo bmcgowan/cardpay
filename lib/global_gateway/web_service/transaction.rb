@@ -8,7 +8,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -18,7 +18,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -28,7 +28,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -38,7 +38,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -48,7 +48,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -58,7 +58,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -68,7 +68,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -78,7 +78,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
@@ -88,7 +88,7 @@ module GlobalGateway
         begin
           response = Response.new(response)
         rescue
-          error_response = Response.new({:transaction_approved => 0, :bank_message => response})
+          error_response = Response.new({:transaction_approved => 0, :bank_message => response, :bank_resp_code => "999", :transaction_tag => Time.now.to_i.to_s})
         end
       end
       
